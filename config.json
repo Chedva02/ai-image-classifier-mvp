@@ -1,0 +1,12 @@
+{
+  "app_name": "ML_Project",
+  "debug": true,
+  "host": "0.0.0.0",
+  "port": 8000,
+  "log_level": "info",
+  "model_config": {
+    "model_weights": "weights/model.pth",
+    "input_size": [224, 224],
+    "num_classes": 10
+  }
+}
