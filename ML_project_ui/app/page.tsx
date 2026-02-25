@@ -19,12 +19,14 @@ export default function HomePage() {
   const [checkingAuth, setCheckingAuth] = useState(true);
 
   useEffect(() => {
+    console.log('Checking authentication status...');
     if (authChecked.current) return;
     authChecked.current = true;
 
     const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
+    console.log('Authentication status:', isAuthenticated);
     if (!isAuthenticated) {
-      // Use replace to avoid creating a browser history entry
+      console.warn('User not authenticated. Redirecting to login page.');
       router.replace("/login");
       return;
     }

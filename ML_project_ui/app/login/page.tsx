@@ -16,6 +16,7 @@ const LoginPage = () => {
   const router = useRouter();
 
   const handleLogin = () => {
+    console.log('Attempting login with username:', username);
     const user = loginData.users.find(
       (u) => u.username.trim() === username.trim() && u.password === password
     );
@@ -25,6 +26,7 @@ const LoginPage = () => {
       localStorage.setItem("isAuthenticated", "true");
       router.push('/'); // Redirect to the main page
     } else {
+      console.error('Login failed: Invalid username or password');
       setError('Invalid username or password');
     }
   };
